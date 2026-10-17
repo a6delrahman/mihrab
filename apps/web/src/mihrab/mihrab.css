@@ -1,0 +1,1265 @@
+/* Mihrab Knowledge Workspace. Colours come only from mihrab-theme.css
+   (extracted from the reference image); logical properties keep RTL right. */
+.mh-root {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  background: var(--mihrab-bg);
+  color: var(--mihrab-text);
+  font-family: var(--mihrab-font-ui);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.mh-root[dir="rtl"] {
+  font-family: "Amiri", var(--mihrab-font-ui);
+  font-size: 16px;
+}
+.mh-root[dir="rtl"] [dir="ltr"] {
+  font-family: var(--mihrab-font-ui);
+  font-size: 15px;
+}
+.mh-root *,
+.mh-root *::before,
+.mh-root *::after {
+  box-sizing: border-box;
+}
+/* Zero specificity, so every Mihrab class wins over these. */
+:where(.mh-root) :where(button, select, textarea, input) {
+  font: inherit;
+  color: inherit;
+}
+/* Foundry styles bare elements globally (minimal.css); undo that here. */
+.mh-root main.mh-canvas {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+/* Foundry colours and sets bare headings in Georgia; Mihrab's classes say otherwise. */
+.mh-root :where(h1, h2, h3, h4) {
+  font-family: var(--mihrab-font-ui);
+  letter-spacing: normal;
+  color: var(--mihrab-text);
+}
+.mh-root label {
+  flex: none;
+}
+.mh-root textarea::placeholder {
+  color: var(--mihrab-muted);
+}
+.mh-root .mh-composer textarea {
+  border: 0;
+  border-radius: 0;
+  padding: 4px 0;
+  font-size: 15px;
+  color: var(--mihrab-text);
+}
+.mh-root :focus-visible {
+  outline: 2px solid var(--mihrab-primary);
+  outline-offset: 2px;
+}
+.mh-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.mh-muted {
+  color: var(--mihrab-muted);
+  font-size: 0.85em;
+}
+.mh-id {
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.72rem;
+  color: var(--mihrab-muted);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* ---------- top bar ---------- */
+.mh-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background: var(--mihrab-surface);
+  border-block-end: 1px solid var(--mihrab-border);
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--mihrab-accent) 25%, transparent);
+}
+.mh-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--mihrab-primary);
+  text-decoration: none;
+}
+.mh-arch path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mh-arch path:nth-child(2) {
+  stroke: var(--mihrab-accent);
+}
+.mh-brand__name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  font-family: var(--mihrab-font-ui);
+}
+.mh-brand__ar {
+  font-family: var(--mihrab-font-arabic);
+  font-size: 1.25rem;
+  color: var(--mihrab-secondary);
+  line-height: 1;
+}
+.mh-seg {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--mihrab-surface-sunken);
+  border: 1px solid var(--mihrab-border);
+}
+.mh-seg button {
+  border: 0;
+  background: transparent;
+  padding: 4px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--mihrab-muted);
+  white-space: nowrap;
+}
+.mh-seg button.is-on {
+  background: var(--mihrab-surface);
+  color: var(--mihrab-primary);
+  box-shadow: 0 1px 2px color-mix(in oklab, var(--mihrab-text) 18%, transparent);
+}
+.mh-seg--lang button {
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.78rem;
+  padding: 4px 10px;
+}
+.mh-model {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.mh-root .mh-model select {
+  color: var(--mihrab-text);
+  max-width: 280px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.mh-model__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.72rem;
+  color: var(--mihrab-secondary);
+  background: color-mix(in oklab, var(--mihrab-secondary) 10%, transparent);
+  white-space: nowrap;
+  direction: ltr;
+}
+.mh-model__badge small {
+  font-size: inherit;
+  color: var(--mihrab-muted);
+}
+.mh-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+  cursor: pointer;
+  color: var(--mihrab-muted);
+}
+
+/* ---------- canvas ---------- */
+.mh-canvas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 42%);
+  min-height: 0;
+}
+.mh-stream {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  border-inline-end: 1px solid var(--mihrab-border);
+}
+.mh-turns {
+  overflow-y: auto;
+  padding: 24px clamp(16px, 4vw, 48px) 12px;
+}
+.mh-hero {
+  max-width: 640px;
+  margin: 6vh auto 0;
+  text-align: center;
+  color: var(--mihrab-primary);
+}
+.mh-hero .mh-arch {
+  display: block;
+  margin: 0 auto;
+}
+.mh-hero h1 {
+  margin: 14px 0 8px;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  line-height: 1.25;
+  color: var(--mihrab-text);
+  font-weight: 700;
+  text-wrap: balance;
+}
+.mh-hero p {
+  color: var(--mihrab-muted);
+  margin: 0 auto;
+  max-width: 560px;
+  text-wrap: pretty;
+}
+.mh-suggestions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  margin: 26px 0 18px;
+}
+.mh-suggestions button {
+  text-align: start;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+  cursor: pointer;
+  color: var(--mihrab-text);
+  font-size: 0.9rem;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.mh-suggestions button:hover:not(:disabled) {
+  border-color: var(--mihrab-accent);
+  transform: translateY(-1px);
+}
+.mh-corpus {
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.75rem !important;
+}
+.mh-warning,
+.mh-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--mihrab-accent);
+}
+.mh-error {
+  color: var(--mihrab-primary);
+  background: var(--mihrab-primary-soft);
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+/* ---------- turns ---------- */
+.mh-turn {
+  max-width: 820px;
+  margin: 0 auto 28px;
+  padding: 4px 0 18px;
+  border-block-end: 1px solid var(--mihrab-border);
+}
+.mh-turn.is-active .mh-question {
+  border-color: var(--mihrab-accent);
+}
+.mh-question {
+  margin: 0 0 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--mihrab-surface-sunken);
+  border-inline-start: 3px solid var(--mihrab-border);
+  font-weight: 600;
+  white-space: pre-wrap;
+}
+.mh-turn__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-block-end: 12px;
+}
+.mh-chip {
+  font-size: 0.75rem;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+}
+.mh-chip--model {
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.7rem;
+  direction: ltr;
+}
+.mh-stages {
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.7rem;
+  color: var(--mihrab-muted);
+  direction: ltr;
+}
+.mh-fatwa {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-block-end: 14px;
+  border-radius: 14px;
+  background: var(--mihrab-accent-soft);
+  border: 1px solid color-mix(in oklab, var(--mihrab-accent) 45%, transparent);
+  color: var(--mihrab-text);
+}
+.mh-fatwa svg {
+  flex: none;
+  color: var(--mihrab-accent);
+  margin-block-start: 2px;
+}
+.mh-fatwa p {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+}
+.mh-phase {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--mihrab-muted);
+  font-style: italic;
+}
+.mh-dots {
+  width: 22px;
+  height: 6px;
+  background: radial-gradient(circle closest-side, var(--mihrab-accent) 90%, transparent) 0 / 33% 100% repeat-x;
+  animation: mh-dots 1s steps(3) infinite;
+}
+@keyframes mh-dots {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+.mh-caret {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--mihrab-accent);
+  vertical-align: text-bottom;
+  animation: mh-blink 1s steps(2) infinite;
+}
+@keyframes mh-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mh-dots,
+  .mh-caret {
+    animation: none;
+  }
+}
+
+/* ---------- answer ---------- */
+.mh-answer {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.mh-answer p,
+.mh-answer ul,
+.mh-answer ol {
+  margin: 0 0 0.9em;
+}
+.mh-answer h4 {
+  margin: 1.2em 0 0.4em;
+  font-size: 1rem;
+  color: var(--mihrab-primary);
+}
+.mh-answer strong {
+  color: var(--mihrab-primary);
+  font-weight: 650;
+}
+.mh-cite {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-inline-start: 3px;
+  vertical-align: 1px;
+}
+.mh-pill {
+  --tone: var(--mihrab-primary);
+  display: inline-flex;
+  align-items: center;
+  padding: 0 7px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in oklab, var(--tone) 40%, transparent);
+  background: color-mix(in oklab, var(--tone) 9%, var(--mihrab-surface));
+  color: var(--tone);
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.68rem;
+  line-height: 1.6;
+  cursor: pointer;
+  white-space: nowrap;
+  direction: ltr;
+  unicode-bidi: isolate;
+  transition: background 0.12s;
+}
+.mh-pill:hover,
+.mh-pill.is-selected {
+  background: var(--tone);
+  color: var(--mihrab-surface);
+}
+.mh-pill.is-unverified {
+  --tone: #b42318;
+  text-decoration: line-through dotted;
+}
+.mh-unverified-quote {
+  color: #b42318;
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.8rem;
+}
+
+/* ---------- immutable source cards ---------- */
+.mh-card {
+  --tone: var(--mihrab-primary);
+  margin: 14px 0;
+  padding: 14px 16px 10px;
+  border-radius: 16px;
+  background: var(--mihrab-surface);
+  border: 1px solid var(--mihrab-border);
+  border-inline-start: 4px solid var(--tone);
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--mihrab-text) 6%, transparent);
+  cursor: default;
+}
+.mh-card[onclick],
+.mh-verified .mh-card {
+  cursor: pointer;
+}
+.mh-card.is-selected {
+  outline: 2px solid var(--tone);
+  outline-offset: 1px;
+}
+.mh-card__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-block-end: 6px;
+}
+.mh-card__title {
+  font-weight: 650;
+  color: var(--tone);
+  font-size: 0.9rem;
+}
+.mh-card__lock {
+  margin-inline-start: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mihrab-muted);
+}
+.mh-arabic {
+  margin: 6px 0 10px;
+  font-family: var(--mihrab-font-arabic);
+  font-size: 1.55rem;
+  line-height: var(--mihrab-arabic-line-height);
+  text-align: right;
+  color: var(--mihrab-text);
+  word-spacing: 0.08em;
+}
+.mh-arabic--inline {
+  font-size: 1.25rem;
+  margin: 4px 0;
+}
+.mh-ayah-no {
+  color: var(--mihrab-accent);
+  white-space: nowrap;
+}
+.mh-translation {
+  margin: 0 0 8px;
+  padding: 0;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--mihrab-text);
+}
+.mh-card.is-compact .mh-arabic {
+  font-size: 1.3rem;
+}
+.mh-card.is-compact .mh-translation {
+  font-size: 0.9rem;
+}
+.mh-card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: baseline;
+  font-size: 0.75rem;
+  color: var(--mihrab-muted);
+  border-block-start: 1px dashed var(--mihrab-border);
+  padding-block-start: 6px;
+}
+.mh-card__foot .mh-id {
+  margin-inline-start: auto;
+}
+.mh-grade {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 650;
+  color: var(--mihrab-surface);
+  background: var(--mihrab-secondary);
+}
+.mh-grade.is-hasan {
+  background: var(--mihrab-accent);
+  color: var(--mihrab-dark-surface);
+}
+.mh-grade.is-daif {
+  background: #b42318;
+}
+.mh-grade.is-unknown,
+.mh-grade.is-collection {
+  background: transparent;
+  color: var(--mihrab-secondary);
+  border: 1px solid currentColor;
+}
+.mh-grade.is-unknown {
+  color: var(--mihrab-muted);
+}
+.mh-grade__full {
+  font-weight: 400;
+  opacity: 0.85;
+}
+.mh-verified {
+  margin-block-start: 18px;
+}
+.mh-verified h4 {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mihrab-muted);
+}
+.mh-verified h4 small {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.mh-verified__grid .mh-card {
+  margin: 8px 0;
+}
+.mh-guards {
+  margin-block-start: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--mihrab-surface-sunken);
+  font-size: 0.8rem;
+  color: var(--mihrab-muted);
+}
+.mh-guards p {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 2px 0;
+}
+.mh-turn__foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-block-start: 12px;
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.7rem;
+  color: var(--mihrab-muted);
+}
+.mh-linklike {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--mihrab-secondary);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.mh-linklike:hover {
+  text-decoration: underline;
+}
+
+/* ---------- composer ---------- */
+.mh-composer {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: end;
+  max-width: 820px;
+  width: calc(100% - 32px);
+  margin: 0 auto 14px;
+  padding: 8px 8px 8px 14px;
+  border-radius: 18px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+  box-shadow: 0 6px 24px -12px color-mix(in oklab, var(--mihrab-text) 35%, transparent);
+}
+.mh-composer:focus-within {
+  border-color: var(--mihrab-accent);
+}
+.mh-composer textarea {
+  resize: none;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  min-height: 46px;
+  max-height: 180px;
+  line-height: 1.5;
+  padding: 4px 0;
+}
+.mh-send {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 0;
+  background: var(--mihrab-primary);
+  color: var(--mihrab-surface);
+  cursor: pointer;
+}
+.mh-send:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.mh-send.is-stop {
+  background: var(--mihrab-accent);
+  color: var(--mihrab-dark-surface);
+}
+.mh-composer__hint {
+  grid-column: 1 / -1;
+  font-size: 0.68rem;
+  color: var(--mihrab-muted);
+}
+
+/* ---------- side pane ---------- */
+.mh-side {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 0;
+  background: var(--mihrab-surface-sunken);
+}
+.mh-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px 0;
+  border-block-end: 1px solid var(--mihrab-border);
+}
+.mh-tabs button {
+  border: 0;
+  background: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--mihrab-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-block-end: 2px solid transparent;
+}
+.mh-tabs button.is-on {
+  color: var(--mihrab-primary);
+  border-color: var(--mihrab-accent);
+}
+.mh-side__body {
+  min-height: 0;
+  position: relative;
+}
+.mh-empty-pane {
+  padding: 32px 24px;
+  color: var(--mihrab-muted);
+  text-align: center;
+}
+.mh-graph {
+  position: absolute;
+  inset: 0;
+}
+.mh-graph .react-flow {
+  --xy-background-color: var(--mihrab-surface-sunken);
+  --xy-background-pattern-color: color-mix(in oklab, var(--mihrab-muted) 30%, transparent);
+  --xy-edge-stroke: color-mix(in oklab, var(--mihrab-muted) 60%, transparent);
+  --xy-controls-button-background-color: var(--mihrab-surface);
+  --xy-controls-button-color: var(--mihrab-text);
+  --xy-controls-button-border-color: var(--mihrab-border);
+  --xy-edge-label-background-color: var(--mihrab-surface);
+  --xy-edge-label-color: var(--mihrab-text);
+  direction: ltr;
+}
+.mh-gnode {
+  --tone: var(--mihrab-primary);
+  display: grid;
+  gap: 1px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: var(--mihrab-surface);
+  border: 1px solid var(--mihrab-border);
+  border-inline-start: 4px solid var(--tone);
+  font-size: 0.72rem;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+.mh-gnode.is-cited {
+  background: color-mix(in oklab, var(--tone) 8%, var(--mihrab-surface));
+}
+.mh-gnode.is-selected {
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--tone) 55%, transparent);
+}
+.mh-gnode__type {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--tone);
+  font-weight: 700;
+}
+.mh-gnode__title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--mihrab-text);
+}
+.mh-gnode__id {
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.6rem;
+  color: var(--mihrab-muted);
+}
+.mh-gnode .react-flow__handle {
+  opacity: 0;
+  width: 6px;
+  height: 6px;
+  min-width: 0;
+  min-height: 0;
+}
+.mh-glane {
+  width: 210px;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mihrab-muted);
+  font-weight: 700;
+  border-block-end: 1px solid var(--mihrab-border);
+  padding-block-end: 4px;
+}
+.react-flow__node-lane {
+  pointer-events: none;
+}
+.mh-gedge.is-explains path {
+  stroke: var(--mihrab-secondary);
+}
+.mh-gedge.is-passage path {
+  stroke-dasharray: 2 3;
+}
+.mh-gedge.is-cites path {
+  stroke: var(--mihrab-primary);
+  stroke-dasharray: 6 4;
+}
+.mh-gedge.is-category path {
+  stroke: var(--mihrab-accent);
+}
+.mh-gedge.is-hot path {
+  stroke-width: 2.4;
+}
+.mh-graph__legend {
+  position: absolute;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--mihrab-surface) 90%, transparent);
+  border: 1px solid var(--mihrab-border);
+  font-size: 0.68rem;
+  color: var(--mihrab-muted);
+  z-index: 5;
+}
+.mh-graph__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.mh-graph__legend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background: var(--tone);
+}
+
+/* ---------- inspector ---------- */
+.mh-inspector-wrap {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  padding: 18px 20px 40px;
+}
+.mh-inspector {
+  --tone: var(--mihrab-primary);
+}
+.mh-inspector header {
+  margin-block-end: 10px;
+}
+.mh-inspector__type {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--tone);
+}
+.mh-inspector h3 {
+  margin: 2px 0;
+  font-size: 1.15rem;
+}
+.mh-inspector h4 {
+  margin: 18px 0 6px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mihrab-muted);
+}
+.mh-longtext {
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+.mh-longtext p {
+  margin: 0 0 0.8em;
+}
+.mh-benefits {
+  padding-inline-start: 1.2em;
+  margin: 0;
+  font-size: 0.92rem;
+}
+.mh-benefits li {
+  margin-block-end: 6px;
+}
+.mh-benefits li::marker {
+  color: var(--mihrab-accent);
+}
+.mh-inline-grade {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+.mh-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.mh-meta div {
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: var(--mihrab-surface);
+  border: 1px solid var(--mihrab-border);
+}
+.mh-meta dt {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--mihrab-muted);
+}
+.mh-meta dd {
+  margin: 0;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+.mh-neighbors {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 4px;
+}
+.mh-neighbors li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.8rem;
+}
+.mh-edge-type {
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.68rem;
+  color: var(--mihrab-muted);
+  direction: ltr;
+}
+
+/* ---------- narrow screens ---------- */
+@media (max-width: 960px) {
+  .mh-root {
+    position: static;
+    min-height: 100vh;
+    grid-template-rows: auto auto;
+  }
+  .mh-canvas {
+    grid-template-columns: 1fr;
+  }
+  .mh-stream {
+    border-inline-end: 0;
+    min-height: 70vh;
+  }
+  .mh-side {
+    min-height: 70vh;
+    border-block-start: 1px solid var(--mihrab-border);
+  }
+  .mh-top {
+    padding: 8px 16px;
+    gap: 8px;
+  }
+  .mh-model select {
+    max-width: 180px;
+  }
+  .mh-turns {
+    padding-inline: 16px;
+  }
+}
+
+/* Node-type tones, last and more specific so they win over component defaults. */
+.mh-root .is-ayah {
+  --tone: var(--mihrab-primary);
+}
+.mh-root .is-tafsir-entry {
+  --tone: var(--mihrab-secondary);
+}
+.mh-root .is-hadeeth-enc-item {
+  --tone: color-mix(in oklab, var(--mihrab-accent) 75%, var(--mihrab-text));
+}
+.mh-root .is-canonical-hadith {
+  --tone: color-mix(in oklab, var(--mihrab-accent) 55%, var(--mihrab-primary));
+}
+.mh-root .is-category,
+.mh-root .is-surah {
+  --tone: var(--mihrab-muted);
+}
+.mh-root .mh-pill.is-unverified {
+  --tone: #b42318;
+}
+
+/* ---------- views and voice ---------- */
+.mh-root .mh-canvas[hidden] {
+  display: none;
+}
+.mh-nav {
+  display: inline-flex;
+  gap: 2px;
+  margin-inline-end: auto;
+  margin-inline-start: 12px;
+}
+.mh-nav button {
+  border: 0;
+  background: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  color: var(--mihrab-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.mh-nav button.is-on {
+  color: var(--mihrab-primary);
+  background: var(--mihrab-primary-soft);
+}
+.mh-composer {
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+.mh-voice {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+  color: var(--mihrab-muted);
+  cursor: pointer;
+}
+.mh-voice:hover:not(:disabled) {
+  color: var(--mihrab-primary);
+  border-color: var(--mihrab-primary);
+}
+.mh-voice:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.mh-voice.is-listening {
+  color: var(--mihrab-surface);
+  background: var(--mihrab-accent);
+  border-color: var(--mihrab-accent);
+  animation: mh-pulse 1.4s ease-out infinite;
+}
+.mh-voice.is-error {
+  border-color: #b42318;
+}
+.mh-search-field .mh-voice {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+}
+@keyframes mh-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--mihrab-accent) 55%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mh-voice.is-listening {
+    animation: none;
+  }
+}
+.mh-open-library {
+  margin-block-start: 6px;
+}
+
+/* ---------- chat history ---------- */
+.mh-canvas.has-history {
+  grid-template-columns: 260px minmax(0, 1fr) minmax(360px, 38%);
+}
+.mh-canvas.has-rail {
+  grid-template-columns: 52px minmax(0, 1fr) minmax(380px, 40%);
+}
+.mh-history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  padding: 12px 10px;
+  background: var(--mihrab-surface-sunken);
+  border-inline-end: 1px solid var(--mihrab-border);
+}
+.mh-history.is-closed {
+  align-items: center;
+  padding: 12px 0;
+}
+.mh-history__head {
+  display: flex;
+  gap: 6px;
+}
+.mh-history__new {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+  color: var(--mihrab-text);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+.mh-history__new:hover {
+  border-color: var(--mihrab-primary);
+  color: var(--mihrab-primary);
+}
+.mh-history__icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 0;
+  background: transparent;
+  color: var(--mihrab-muted);
+  cursor: pointer;
+}
+.mh-history__icon:hover {
+  background: var(--mihrab-surface);
+  color: var(--mihrab-text);
+}
+.mh-root .mh-history__search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-bg);
+  color: var(--mihrab-muted);
+}
+.mh-root .mh-history__search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 7px 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--mihrab-text);
+  font-size: 0.85rem;
+}
+.mh-history__list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  margin-inline: -4px;
+  padding-inline: 4px;
+}
+.mh-history__list .mh-muted {
+  padding: 8px 6px;
+}
+.mh-root .mh-history__list h3 {
+  margin: 12px 6px 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mihrab-muted);
+}
+.mh-history__list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mh-chat {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 9px;
+}
+.mh-chat:hover,
+.mh-chat.is-on {
+  background: var(--mihrab-surface);
+}
+.mh-chat.is-on {
+  box-shadow: inset 3px 0 0 var(--mihrab-primary);
+}
+.mh-root[dir="rtl"] .mh-chat.is-on {
+  box-shadow: inset -3px 0 0 var(--mihrab-primary);
+}
+.mh-chat__open {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 0;
+  background: none;
+  color: var(--mihrab-text);
+  text-align: start;
+  font-size: 0.86rem;
+  cursor: pointer;
+}
+.mh-chat__open span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mh-chat__actions {
+  display: none;
+  gap: 2px;
+  padding-inline-end: 4px;
+}
+.mh-chat:hover .mh-chat__actions,
+.mh-chat:focus-within .mh-chat__actions {
+  display: flex;
+}
+.mh-chat__actions button,
+.mh-chat.is-editing button {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  border: 0;
+  background: transparent;
+  color: var(--mihrab-muted);
+  cursor: pointer;
+}
+.mh-chat__actions button:hover {
+  color: var(--mihrab-text);
+  background: var(--mihrab-bg);
+}
+.mh-chat.is-editing form {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  padding: 3px;
+}
+.mh-root .mh-chat.is-editing input {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 8px;
+  border-radius: 7px;
+  border: 1px solid var(--mihrab-primary);
+  background: var(--mihrab-bg);
+  color: var(--mihrab-text);
+  font-size: 0.85rem;
+}
+.mh-chat.is-confirm {
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--mihrab-surface);
+  font-size: 0.82rem;
+}
+.mh-chat.is-confirm span {
+  flex-basis: 100%;
+}
+.mh-chat.is-confirm button {
+  padding: 3px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--mihrab-border);
+  background: transparent;
+  color: var(--mihrab-text);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.mh-chat.is-confirm button.is-danger {
+  border-color: #b42318;
+  background: #b42318;
+  color: #fff;
+}
+@media (max-width: 960px) {
+  .mh-canvas.has-history,
+  .mh-canvas.has-rail {
+    grid-template-columns: 1fr;
+  }
+  .mh-history.is-closed {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 6px 12px;
+    border-inline-end: 0;
+    border-block-end: 1px solid var(--mihrab-border);
+  }
+  .mh-history:not(.is-closed) {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(320px, 86vw);
+    z-index: 30;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.45);
+  }
+}
