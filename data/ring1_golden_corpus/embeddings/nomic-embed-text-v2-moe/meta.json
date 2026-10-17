@@ -1,0 +1,5 @@
+{
+  "model": "nomic-embed-text-v2-moe",
+  "dims": 768,
+  "count": 37480
+}

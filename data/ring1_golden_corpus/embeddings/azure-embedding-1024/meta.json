@@ -1,0 +1,7 @@
+{
+  "id": "azure-embedding-1024",
+  "provider": "azure_foundry",
+  "model": "embedding",
+  "dims": 1024,
+  "count": 37480
+}

@@ -1,0 +1,786 @@
+/* Mihrab Library: shelf and reader. Tokens come from mihrab-theme.css. */
+.mh-library {
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+}
+.mh-root .mh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--mihrab-primary);
+  background: var(--mihrab-primary);
+  color: var(--mihrab-surface);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.mh-btn.is-quiet {
+  background: transparent;
+  color: var(--mihrab-primary);
+  border-color: var(--mihrab-border);
+}
+.mh-btn:disabled {
+  opacity: 0.5;
+}
+.mh-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--mihrab-border);
+  overflow: hidden;
+}
+.mh-progress span {
+  display: block;
+  height: 100%;
+  background: var(--mihrab-primary);
+  border-radius: inherit;
+}
+
+/* ---------- covers (fixed colours: they are objects, not UI) ---------- */
+.mh-cover {
+  --c1: var(--mihrab-palette-primary);
+  --c2: var(--mihrab-palette-dark-night, #0f1626);
+  --gold: var(--mihrab-palette-accent);
+  position: relative;
+  display: grid;
+  align-content: end;
+  justify-items: center;
+  gap: 4px;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  padding: 12% 8% 10%;
+  border-radius: 6px 10px 10px 6px;
+  overflow: hidden;
+  color: #fdfbf5;
+  text-align: center;
+  background:
+    radial-gradient(120% 70% at 50% 0%, color-mix(in oklab, var(--c1) 70%, white 10%), transparent 70%),
+    linear-gradient(165deg, var(--c1), var(--c2));
+  box-shadow:
+    inset 6px 0 0 color-mix(in oklab, black 25%, transparent),
+    0 10px 24px -14px rgba(0, 0, 0, 0.55);
+}
+.mh-cover[data-book="tafsir-ibn-kathir"] {
+  --c1: var(--mihrab-palette-secondary);
+  --c2: var(--mihrab-palette-dark-secondary, #092455);
+}
+.mh-cover[data-book="hadeethenc"] {
+  --c1: var(--mihrab-palette-dark-primary, #50a8c1);
+  --c2: var(--mihrab-palette-dark-night, #0f1626);
+}
+.mh-cover[data-book="bukhari"] {
+  --c1: var(--mihrab-palette-dark-secondary, #092455);
+  --c2: #050a18;
+}
+.mh-cover[data-book="muslim"] {
+  --c1: var(--mihrab-palette-dark, #300c08);
+  --c2: #120604;
+}
+.mh-cover[data-book="nawawi40"] {
+  --c1: var(--mihrab-palette-accent);
+  --c2: #3a2a14;
+  --gold: #fdfbf5;
+}
+.mh-cover__arch {
+  position: absolute;
+  inset: 8% 18% auto;
+  width: 64%;
+  opacity: 0.85;
+}
+.mh-cover__arch path {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.6;
+}
+.mh-cover__ar {
+  position: relative;
+  font-family: var(--mihrab-font-arabic);
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--gold);
+}
+.mh-cover__en {
+  position: relative;
+  font-family: var(--mihrab-font-reading);
+  font-size: clamp(0.72rem, 1.2vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.mh-cover.is-sm {
+  width: 92px;
+  padding: 10px 8px;
+}
+.mh-cover.is-sm .mh-cover__ar {
+  font-size: 0.95rem;
+}
+.mh-cover.is-sm .mh-cover__en {
+  font-size: 0.55rem;
+}
+
+/* ---------- shelf ---------- */
+.mh-shelf {
+  overflow-y: auto;
+  padding: 32px clamp(16px, 5vw, 64px) 64px;
+}
+.mh-shelf__head {
+  max-width: 760px;
+  margin-block-end: 26px;
+}
+.mh-root .mh-shelf__head h1 {
+  margin: 0 0 6px;
+  font-size: 1.9rem;
+  font-family: var(--mihrab-font-reading);
+}
+.mh-shelf__head p {
+  margin: 0;
+  color: var(--mihrab-muted);
+}
+.mh-shelf__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 22px;
+}
+.mh-book {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 18px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--mihrab-surface);
+  border: 1px solid var(--mihrab-border);
+}
+.mh-book__cover {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.mh-book__cover:hover {
+  transform: translateY(-2px) rotate(-0.5deg);
+}
+.mh-book__body {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  min-width: 0;
+}
+.mh-root .mh-book h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-family: var(--mihrab-font-reading);
+}
+.mh-book__author {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--mihrab-secondary);
+}
+.mh-book__desc {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--mihrab-muted);
+}
+.mh-book__meta {
+  margin: 4px 0 2px;
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.7rem;
+  color: var(--mihrab-muted);
+}
+.mh-book__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-block-start: 6px;
+  font-size: 0.78rem;
+  color: var(--mihrab-muted);
+}
+.mh-book__actions .mh-btn {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- reader ---------- */
+.mh-reader {
+  --mh-read-scale: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  min-height: 0;
+  background: var(--mihrab-bg);
+}
+.mh-reader.is-collapsed {
+  grid-template-columns: minmax(0, 1fr);
+}
+.mh-reader__main {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px;
+  grid-template-rows: 1fr auto;
+  align-items: start;
+  overflow-y: auto;
+  min-height: 0;
+  scroll-padding-block: 80px;
+}
+.mh-reader__column {
+  grid-column: 1;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px clamp(18px, 4vw, 56px) 120px;
+  font-size: calc(1rem * var(--mh-read-scale));
+}
+.mh-reader__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-block-end: 22px;
+}
+.mh-summarize {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  border: 1.5px solid color-mix(in oklab, var(--mihrab-secondary) 70%, transparent);
+  background: transparent;
+  color: var(--mihrab-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+.mh-summarize svg {
+  color: var(--mihrab-secondary);
+}
+.mh-summarize:hover {
+  background: var(--mihrab-primary-soft);
+}
+.mh-reader__ask {
+  /* Floats over the passage being read. */
+  position: sticky;
+  top: 12px;
+  z-index: 4;
+  box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.6);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 8px;
+  align-items: end;
+  margin-block-end: 22px;
+  padding: 10px 10px 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--mihrab-accent);
+  background: var(--mihrab-surface);
+}
+.mh-reader__ask:focus-within {
+  border-color: var(--mihrab-primary);
+}
+.mh-root .mh-reader__ask textarea {
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  resize: none;
+  background: transparent;
+  color: var(--mihrab-text);
+  padding: 4px 0;
+  font-size: 0.95rem;
+}
+.mh-chapter-head {
+  margin-block-end: 28px;
+  padding-block-end: 18px;
+  border-block-end: 1px solid var(--mihrab-border);
+}
+.mh-chapter-head__label {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--mihrab-accent);
+  font-weight: 700;
+}
+.mh-root .mh-chapter-head h1 {
+  margin: 4px 0 2px;
+  font-family: var(--mihrab-font-reading);
+  font-size: calc(2.1rem * var(--mh-read-scale));
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--mihrab-text);
+}
+.mh-chapter-head__ar {
+  margin: 4px 0 0;
+  font-family: var(--mihrab-font-arabic);
+  font-size: calc(1.7rem * var(--mh-read-scale));
+  color: var(--mihrab-secondary);
+  text-align: start;
+}
+.mh-chapter-head__sub {
+  margin: 4px 0 0;
+  color: var(--mihrab-muted);
+  font-size: 0.9em;
+}
+.mh-read-item {
+  position: relative;
+  padding: 14px 44px 14px 0;
+  border-radius: 12px;
+  transition: background 0.6s;
+}
+.mh-root[dir="rtl"] .mh-read-item {
+  padding: 14px 0 14px 44px;
+}
+.mh-read-item + .mh-read-item {
+  border-block-start: 1px solid color-mix(in oklab, var(--mihrab-border) 60%, transparent);
+}
+.mh-read-item.is-tafsir,
+.mh-read-item.is-hadith {
+  padding-block: 26px;
+}
+.mh-read-item.is-target,
+.mh-read-verse.is-target {
+  background: var(--mihrab-accent-soft);
+}
+.mh-read-actions {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 14px;
+  display: grid;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.mh-read-item:hover .mh-read-actions,
+.mh-read-actions:focus-within,
+.mh-read-actions button[aria-pressed="true"] {
+  opacity: 1;
+}
+.mh-read-actions button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+  color: var(--mihrab-muted);
+  cursor: pointer;
+}
+.mh-read-actions button[aria-pressed="true"] {
+  color: var(--mihrab-accent);
+  opacity: 1;
+}
+.mh-read-arabic {
+  margin: 0 0 10px;
+  font-family: var(--mihrab-font-arabic);
+  font-size: calc(1.65rem * var(--mh-read-scale));
+  line-height: var(--mihrab-arabic-line-height);
+  text-align: right;
+  color: var(--mihrab-text);
+}
+.mh-read-arabic.is-quote {
+  font-size: calc(1.3rem * var(--mh-read-scale));
+  padding-inline-start: 14px;
+  border-inline-start: 3px solid var(--mihrab-accent);
+}
+.mh-read-translation,
+.mh-read-prose p {
+  margin: 0 0 0.9em;
+  font-family: var(--mihrab-font-reading);
+  font-size: calc(1.08rem * var(--mh-read-scale));
+  line-height: 1.85;
+  color: var(--mihrab-text);
+}
+.mh-read-translation.is-small {
+  font-size: calc(0.98rem * var(--mh-read-scale));
+}
+.mh-read-prose h4,
+.mh-read-section {
+  margin: 1.4em 0 0.5em;
+  font-family: var(--mihrab-font-ui);
+  font-size: 0.82em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mihrab-secondary);
+}
+.mh-ayah-badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.9em;
+  height: 1.9em;
+  margin-inline-end: 0.6em;
+  padding: 0 0.35em;
+  border-radius: 999px;
+  border: 1px solid var(--mihrab-accent);
+  color: var(--mihrab-accent);
+  font-family: var(--mihrab-font-mono);
+  font-size: 0.66em;
+  vertical-align: 0.25em;
+}
+.mh-read-kicker {
+  margin: 0 0 10px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mihrab-accent);
+  font-weight: 700;
+}
+.mh-read-verses {
+  display: grid;
+  gap: 4px;
+  margin-block-end: 18px;
+  padding: 14px 18px 6px;
+  border-radius: 14px;
+  background: var(--mihrab-surface);
+  border: 1px solid var(--mihrab-border);
+  border-inline-start: 4px solid var(--mihrab-primary);
+}
+.mh-root .mh-read-title {
+  margin: 0 0 8px;
+  font-family: var(--mihrab-font-reading);
+  font-size: calc(1.3rem * var(--mh-read-scale));
+  font-weight: 600;
+  line-height: 1.4;
+}
+.mh-read-badges {
+  margin-block-end: 10px;
+}
+.mh-read-attribution {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--mihrab-muted);
+}
+.mh-load {
+  display: flex;
+  margin: 18px auto;
+}
+.mh-next-chapter {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  margin-block-start: 32px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+  color: var(--mihrab-text);
+  text-align: start;
+  cursor: pointer;
+}
+.mh-next-chapter span {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mihrab-muted);
+}
+
+/* the vertical tool rail, as in the reference reader */
+.mh-reader__tools {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: calc(100vh - 200px);
+  min-height: 260px;
+  z-index: 3;
+}
+.mh-reader__tools-end {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mh-reader__tools button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 0;
+  background: transparent;
+  color: var(--mihrab-text);
+  cursor: pointer;
+}
+.mh-reader__tools button:hover {
+  background: var(--mihrab-surface);
+}
+.mh-reader__tools button.is-on,
+.mh-reader__tools button[aria-pressed="true"] {
+  background: var(--mihrab-text);
+  color: var(--mihrab-bg);
+}
+.mh-reader__tools .is-sparkle {
+  color: var(--mihrab-secondary);
+}
+.mh-popover {
+  position: absolute;
+  inset-inline-end: 52px;
+  bottom: 40px;
+  display: grid;
+  gap: 10px;
+  width: 220px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-surface);
+  box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.5);
+}
+.mh-popover p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--mihrab-muted);
+}
+.mh-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--mihrab-text);
+}
+.mh-reader__bar {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: center;
+  padding: 8px 12px;
+  background: color-mix(in oklab, var(--mihrab-bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-block-start: 1px solid var(--mihrab-border);
+  z-index: 2;
+}
+.mh-reader__bar button {
+  border: 0;
+  background: none;
+  color: var(--mihrab-text);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  height: 40px;
+  border-radius: 10px;
+}
+.mh-reader__bar button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.mh-reader__bar-title {
+  justify-items: center;
+  min-width: 0;
+}
+.mh-reader__bar-title strong,
+.mh-reader__bar-title span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mh-reader__bar-title strong {
+  font-size: 0.85rem;
+}
+.mh-reader__bar-title span {
+  font-size: 0.75rem;
+  color: var(--mihrab-muted);
+}
+.mh-root[dir="rtl"] .mh-flip {
+  transform: scaleX(-1);
+}
+
+/* the sidebar */
+.mh-reader__side {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 22px 22px 32px;
+  background: var(--mihrab-surface);
+  border-inline-start: 1px solid var(--mihrab-border);
+}
+.mh-reader__close {
+  position: absolute;
+  inset-inline-end: 14px;
+  top: 14px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-bg);
+  color: var(--mihrab-text);
+  cursor: pointer;
+}
+.mh-reader__book {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  margin-block-end: 18px;
+  padding-inline-end: 36px;
+}
+.mh-root .mh-reader__book h2 {
+  margin: 4px 0 6px;
+  font-size: 1.15rem;
+  font-family: var(--mihrab-font-reading);
+}
+.mh-reader__stat {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 8px 0 14px;
+  font-size: 0.8rem;
+  color: var(--mihrab-muted);
+}
+.mh-reader__stat strong {
+  color: var(--mihrab-text);
+}
+.mh-reader__side .mh-tabs {
+  padding: 0;
+  margin-block-end: 6px;
+}
+.mh-toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+.mh-toc li > button {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: var(--mihrab-text);
+  text-align: start;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.mh-toc li > button:hover {
+  background: var(--mihrab-bg);
+}
+.mh-toc li.is-on > button {
+  background: var(--mihrab-bg);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 var(--mihrab-primary);
+}
+.mh-root[dir="rtl"] .mh-toc li.is-on > button {
+  box-shadow: inset -3px 0 0 var(--mihrab-primary);
+}
+.mh-toc__title {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.mh-toc__ar {
+  font-family: var(--mihrab-font-arabic);
+  font-weight: 400;
+  color: var(--mihrab-secondary);
+}
+.mh-toc__pct {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--mihrab-muted);
+}
+.mh-toc .mh-muted {
+  padding: 12px;
+}
+.mh-reader__search {
+  display: grid;
+  gap: 8px;
+  margin-block-end: 14px;
+}
+.mh-search-field {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px 4px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--mihrab-border);
+  background: var(--mihrab-bg);
+  color: var(--mihrab-muted);
+}
+.mh-root .mh-search-field input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--mihrab-text);
+  padding: 6px 0;
+}
+.mh-hits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+.mh-hits button {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: var(--mihrab-text);
+  text-align: start;
+  cursor: pointer;
+}
+.mh-hits button:hover {
+  background: var(--mihrab-bg);
+}
+.mh-hits strong {
+  font-size: 0.8rem;
+  color: var(--mihrab-primary);
+}
+.mh-hits span {
+  font-size: 0.78rem;
+  color: var(--mihrab-muted);
+}
+
+@media (max-width: 960px) {
+  .mh-reader,
+  .mh-reader.is-collapsed {
+    grid-template-columns: 1fr;
+  }
+  .mh-reader__side {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+  }
+  .mh-reader__main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .mh-reader__tools {
+    position: fixed;
+    margin: 0;
+    top: auto;
+    bottom: 70px;
+    inset-inline-end: 10px;
+    height: auto;
+    flex-direction: row;
+    padding: 4px;
+    border-radius: 14px;
+    background: var(--mihrab-surface);
+    border: 1px solid var(--mihrab-border);
+  }
+  .mh-reader__tools-end {
+    flex-direction: row;
+    margin: 0;
+  }
+  .mh-book {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+  .mh-shelf__grid {
+    grid-template-columns: 1fr;
+  }
+}

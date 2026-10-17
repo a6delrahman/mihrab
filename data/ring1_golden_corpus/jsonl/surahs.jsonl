@@ -1,0 +1,114 @@
+{"node_id": "surah:1", "surah_number": 1, "name_ar": "سُورَةُ ٱلْفَاتِحَةِ", "name_en": "Al-Faatiha", "name_translation_en": "The Opening", "revelation_place": "Meccan", "ayah_count": 7}
+{"node_id": "surah:2", "surah_number": 2, "name_ar": "سُورَةُ البَقَرَةِ", "name_en": "Al-Baqara", "name_translation_en": "The Cow", "revelation_place": "Medinan", "ayah_count": 286}
+{"node_id": "surah:3", "surah_number": 3, "name_ar": "سُورَةُ آلِ عِمۡرَانَ", "name_en": "Aal-i-Imraan", "name_translation_en": "The Family of Imraan", "revelation_place": "Medinan", "ayah_count": 200}
+{"node_id": "surah:4", "surah_number": 4, "name_ar": "سُورَةُ النِّسَاءِ", "name_en": "An-Nisaa", "name_translation_en": "The Women", "revelation_place": "Medinan", "ayah_count": 176}
+{"node_id": "surah:5", "surah_number": 5, "name_ar": "سُورَةُ المَائـِدَةِ", "name_en": "Al-Maaida", "name_translation_en": "The Table", "revelation_place": "Medinan", "ayah_count": 120}
+{"node_id": "surah:6", "surah_number": 6, "name_ar": "سُورَةُ الأَنۡعَامِ", "name_en": "Al-An'aam", "name_translation_en": "The Cattle", "revelation_place": "Meccan", "ayah_count": 165}
+{"node_id": "surah:7", "surah_number": 7, "name_ar": "سُورَةُ الأَعۡرَافِ", "name_en": "Al-A'raaf", "name_translation_en": "The Heights", "revelation_place": "Meccan", "ayah_count": 206}
+{"node_id": "surah:8", "surah_number": 8, "name_ar": "سُورَةُ الأَنفَالِ", "name_en": "Al-Anfaal", "name_translation_en": "The Spoils of War", "revelation_place": "Medinan", "ayah_count": 75}
+{"node_id": "surah:9", "surah_number": 9, "name_ar": "سُورَةُ التَّوۡبَةِ", "name_en": "At-Tawba", "name_translation_en": "The Repentance", "revelation_place": "Medinan", "ayah_count": 129}
+{"node_id": "surah:10", "surah_number": 10, "name_ar": "سُورَةُ يُونُسَ", "name_en": "Yunus", "name_translation_en": "Jonas", "revelation_place": "Meccan", "ayah_count": 109}
+{"node_id": "surah:11", "surah_number": 11, "name_ar": "سُورَةُ هُودٍ", "name_en": "Hud", "name_translation_en": "Hud", "revelation_place": "Meccan", "ayah_count": 123}
+{"node_id": "surah:12", "surah_number": 12, "name_ar": "سُورَةُ يُوسُفَ", "name_en": "Yusuf", "name_translation_en": "Joseph", "revelation_place": "Meccan", "ayah_count": 111}
+{"node_id": "surah:13", "surah_number": 13, "name_ar": "سُورَةُ الرَّعۡدِ", "name_en": "Ar-Ra'd", "name_translation_en": "The Thunder", "revelation_place": "Medinan", "ayah_count": 43}
+{"node_id": "surah:14", "surah_number": 14, "name_ar": "سُورَةُ إِبۡرَاهِيمَ", "name_en": "Ibrahim", "name_translation_en": "Abraham", "revelation_place": "Meccan", "ayah_count": 52}
+{"node_id": "surah:15", "surah_number": 15, "name_ar": "سُورَةُ الحِجۡرِ", "name_en": "Al-Hijr", "name_translation_en": "The Rock", "revelation_place": "Meccan", "ayah_count": 99}
+{"node_id": "surah:16", "surah_number": 16, "name_ar": "سُورَةُ النَّحۡلِ", "name_en": "An-Nahl", "name_translation_en": "The Bee", "revelation_place": "Meccan", "ayah_count": 128}
+{"node_id": "surah:17", "surah_number": 17, "name_ar": "سُورَةُ الإِسۡرَاءِ", "name_en": "Al-Israa", "name_translation_en": "The Night Journey", "revelation_place": "Meccan", "ayah_count": 111}
+{"node_id": "surah:18", "surah_number": 18, "name_ar": "سُورَةُ الكَهۡفِ", "name_en": "Al-Kahf", "name_translation_en": "The Cave", "revelation_place": "Meccan", "ayah_count": 110}
+{"node_id": "surah:19", "surah_number": 19, "name_ar": "سُورَةُ مَرۡيَمَ", "name_en": "Maryam", "name_translation_en": "Mary", "revelation_place": "Meccan", "ayah_count": 98}
+{"node_id": "surah:20", "surah_number": 20, "name_ar": "سُورَةُ طه", "name_en": "Taa-Haa", "name_translation_en": "Taa-Haa", "revelation_place": "Meccan", "ayah_count": 135}
+{"node_id": "surah:21", "surah_number": 21, "name_ar": "سُورَةُ الأَنبِيَاءِ", "name_en": "Al-Anbiyaa", "name_translation_en": "The Prophets", "revelation_place": "Meccan", "ayah_count": 112}
+{"node_id": "surah:22", "surah_number": 22, "name_ar": "سُورَةُ الحَجِّ", "name_en": "Al-Hajj", "name_translation_en": "The Pilgrimage", "revelation_place": "Medinan", "ayah_count": 78}
+{"node_id": "surah:23", "surah_number": 23, "name_ar": "سُورَةُ المُؤۡمِنُونَ", "name_en": "Al-Muminoon", "name_translation_en": "The Believers", "revelation_place": "Meccan", "ayah_count": 118}
+{"node_id": "surah:24", "surah_number": 24, "name_ar": "سُورَةُ النُّورِ", "name_en": "An-Noor", "name_translation_en": "The Light", "revelation_place": "Medinan", "ayah_count": 64}
+{"node_id": "surah:25", "surah_number": 25, "name_ar": "سُورَةُ الفُرۡقَانِ", "name_en": "Al-Furqaan", "name_translation_en": "The Criterion", "revelation_place": "Meccan", "ayah_count": 77}
+{"node_id": "surah:26", "surah_number": 26, "name_ar": "سُورَةُ الشُّعَرَاءِ", "name_en": "Ash-Shu'araa", "name_translation_en": "The Poets", "revelation_place": "Meccan", "ayah_count": 227}
+{"node_id": "surah:27", "surah_number": 27, "name_ar": "سُورَةُ النَّمۡلِ", "name_en": "An-Naml", "name_translation_en": "The Ant", "revelation_place": "Meccan", "ayah_count": 93}
+{"node_id": "surah:28", "surah_number": 28, "name_ar": "سُورَةُ القَصَصِ", "name_en": "Al-Qasas", "name_translation_en": "The Stories", "revelation_place": "Meccan", "ayah_count": 88}
+{"node_id": "surah:29", "surah_number": 29, "name_ar": "سُورَةُ العَنكَبُوتِ", "name_en": "Al-Ankaboot", "name_translation_en": "The Spider", "revelation_place": "Meccan", "ayah_count": 69}
+{"node_id": "surah:30", "surah_number": 30, "name_ar": "سُورَةُ الرُّومِ", "name_en": "Ar-Room", "name_translation_en": "The Romans", "revelation_place": "Meccan", "ayah_count": 60}
+{"node_id": "surah:31", "surah_number": 31, "name_ar": "سُورَةُ لُقۡمَانَ", "name_en": "Luqman", "name_translation_en": "Luqman", "revelation_place": "Meccan", "ayah_count": 34}
+{"node_id": "surah:32", "surah_number": 32, "name_ar": "سُورَةُ السَّجۡدَةِ", "name_en": "As-Sajda", "name_translation_en": "The Prostration", "revelation_place": "Meccan", "ayah_count": 30}
+{"node_id": "surah:33", "surah_number": 33, "name_ar": "سُورَةُ الأَحۡزَابِ", "name_en": "Al-Ahzaab", "name_translation_en": "The Clans", "revelation_place": "Medinan", "ayah_count": 73}
+{"node_id": "surah:34", "surah_number": 34, "name_ar": "سُورَةُ سَبَإٍ", "name_en": "Saba", "name_translation_en": "Sheba", "revelation_place": "Meccan", "ayah_count": 54}
+{"node_id": "surah:35", "surah_number": 35, "name_ar": "سُورَةُ فَاطِرٍ", "name_en": "Faatir", "name_translation_en": "The Originator", "revelation_place": "Meccan", "ayah_count": 45}
+{"node_id": "surah:36", "surah_number": 36, "name_ar": "سُورَةُ يسٓ", "name_en": "Yaseen", "name_translation_en": "Yaseen", "revelation_place": "Meccan", "ayah_count": 83}
+{"node_id": "surah:37", "surah_number": 37, "name_ar": "سُورَةُ الصَّافَّاتِ", "name_en": "As-Saaffaat", "name_translation_en": "Those drawn up in Ranks", "revelation_place": "Meccan", "ayah_count": 182}
+{"node_id": "surah:38", "surah_number": 38, "name_ar": "سُورَةُ صٓ", "name_en": "Saad", "name_translation_en": "The letter Saad", "revelation_place": "Meccan", "ayah_count": 88}
+{"node_id": "surah:39", "surah_number": 39, "name_ar": "سُورَةُ الزُّمَرِ", "name_en": "Az-Zumar", "name_translation_en": "The Groups", "revelation_place": "Meccan", "ayah_count": 75}
+{"node_id": "surah:40", "surah_number": 40, "name_ar": "سُورَةُ غَافِرٍ", "name_en": "Ghafir", "name_translation_en": "The Forgiver", "revelation_place": "Meccan", "ayah_count": 85}
+{"node_id": "surah:41", "surah_number": 41, "name_ar": "سُورَةُ فُصِّلَتۡ", "name_en": "Fussilat", "name_translation_en": "Explained in detail", "revelation_place": "Meccan", "ayah_count": 54}
+{"node_id": "surah:42", "surah_number": 42, "name_ar": "سُورَةُ الشُّورَىٰ", "name_en": "Ash-Shura", "name_translation_en": "Consultation", "revelation_place": "Meccan", "ayah_count": 53}
+{"node_id": "surah:43", "surah_number": 43, "name_ar": "سُورَةُ الزُّخۡرُفِ", "name_en": "Az-Zukhruf", "name_translation_en": "Ornaments of gold", "revelation_place": "Meccan", "ayah_count": 89}
+{"node_id": "surah:44", "surah_number": 44, "name_ar": "سُورَةُ الدُّخَانِ", "name_en": "Ad-Dukhaan", "name_translation_en": "The Smoke", "revelation_place": "Meccan", "ayah_count": 59}
+{"node_id": "surah:45", "surah_number": 45, "name_ar": "سُورَةُ الجَاثِيَةِ", "name_en": "Al-Jaathiya", "name_translation_en": "Crouching", "revelation_place": "Meccan", "ayah_count": 37}
+{"node_id": "surah:46", "surah_number": 46, "name_ar": "سُورَةُ الأَحۡقَافِ", "name_en": "Al-Ahqaf", "name_translation_en": "The Dunes", "revelation_place": "Meccan", "ayah_count": 35}
+{"node_id": "surah:47", "surah_number": 47, "name_ar": "سُورَةُ مُحَمَّدٍ", "name_en": "Muhammad", "name_translation_en": "Muhammad", "revelation_place": "Medinan", "ayah_count": 38}
+{"node_id": "surah:48", "surah_number": 48, "name_ar": "سُورَةُ الفَتۡحِ", "name_en": "Al-Fath", "name_translation_en": "The Victory", "revelation_place": "Medinan", "ayah_count": 29}
+{"node_id": "surah:49", "surah_number": 49, "name_ar": "سُورَةُ الحُجُرَاتِ", "name_en": "Al-Hujuraat", "name_translation_en": "The Inner Apartments", "revelation_place": "Medinan", "ayah_count": 18}
+{"node_id": "surah:50", "surah_number": 50, "name_ar": "سُورَةُ قٓ", "name_en": "Qaaf", "name_translation_en": "The letter Qaaf", "revelation_place": "Meccan", "ayah_count": 45}
+{"node_id": "surah:51", "surah_number": 51, "name_ar": "سُورَةُ الذَّارِيَاتِ", "name_en": "Adh-Dhaariyat", "name_translation_en": "The Winnowing Winds", "revelation_place": "Meccan", "ayah_count": 60}
+{"node_id": "surah:52", "surah_number": 52, "name_ar": "سُورَةُ الطُّورِ", "name_en": "At-Tur", "name_translation_en": "The Mount", "revelation_place": "Meccan", "ayah_count": 49}
+{"node_id": "surah:53", "surah_number": 53, "name_ar": "سُورَةُ النَّجۡمِ", "name_en": "An-Najm", "name_translation_en": "The Star", "revelation_place": "Meccan", "ayah_count": 62}
+{"node_id": "surah:54", "surah_number": 54, "name_ar": "سُورَةُ القَمَرِ", "name_en": "Al-Qamar", "name_translation_en": "The Moon", "revelation_place": "Meccan", "ayah_count": 55}
+{"node_id": "surah:55", "surah_number": 55, "name_ar": "سُورَةُ الرَّحۡمَٰن", "name_en": "Ar-Rahmaan", "name_translation_en": "The Beneficent", "revelation_place": "Medinan", "ayah_count": 78}
+{"node_id": "surah:56", "surah_number": 56, "name_ar": "سُورَةُ الوَاقِعَةِ", "name_en": "Al-Waaqia", "name_translation_en": "The Inevitable", "revelation_place": "Meccan", "ayah_count": 96}
+{"node_id": "surah:57", "surah_number": 57, "name_ar": "سُورَةُ الحَدِيدِ", "name_en": "Al-Hadid", "name_translation_en": "The Iron", "revelation_place": "Medinan", "ayah_count": 29}
+{"node_id": "surah:58", "surah_number": 58, "name_ar": "سُورَةُ المُجَادلَةِ", "name_en": "Al-Mujaadila", "name_translation_en": "The Pleading Woman", "revelation_place": "Medinan", "ayah_count": 22}
+{"node_id": "surah:59", "surah_number": 59, "name_ar": "سُورَةُ الحَشۡرِ", "name_en": "Al-Hashr", "name_translation_en": "The Exile", "revelation_place": "Medinan", "ayah_count": 24}
+{"node_id": "surah:60", "surah_number": 60, "name_ar": "سُورَةُ المُمۡتَحنَةِ", "name_en": "Al-Mumtahana", "name_translation_en": "She that is to be examined", "revelation_place": "Medinan", "ayah_count": 13}
+{"node_id": "surah:61", "surah_number": 61, "name_ar": "سُورَةُ الصَّفِّ", "name_en": "As-Saff", "name_translation_en": "The Ranks", "revelation_place": "Medinan", "ayah_count": 14}
+{"node_id": "surah:62", "surah_number": 62, "name_ar": "سُورَةُ الجُمُعَةِ", "name_en": "Al-Jumu'a", "name_translation_en": "Friday", "revelation_place": "Medinan", "ayah_count": 11}
+{"node_id": "surah:63", "surah_number": 63, "name_ar": "سُورَةُ المُنَافِقُونَ", "name_en": "Al-Munaafiqoon", "name_translation_en": "The Hypocrites", "revelation_place": "Medinan", "ayah_count": 11}
+{"node_id": "surah:64", "surah_number": 64, "name_ar": "سُورَةُ التَّغَابُنِ", "name_en": "At-Taghaabun", "name_translation_en": "Mutual Disillusion", "revelation_place": "Medinan", "ayah_count": 18}
+{"node_id": "surah:65", "surah_number": 65, "name_ar": "سُورَةُ الطَّلَاقِ", "name_en": "At-Talaaq", "name_translation_en": "Divorce", "revelation_place": "Medinan", "ayah_count": 12}
+{"node_id": "surah:66", "surah_number": 66, "name_ar": "سُورَةُ التَّحۡرِيمِ", "name_en": "At-Tahrim", "name_translation_en": "The Prohibition", "revelation_place": "Medinan", "ayah_count": 12}
+{"node_id": "surah:67", "surah_number": 67, "name_ar": "سُورَةُ المُلۡكِ", "name_en": "Al-Mulk", "name_translation_en": "The Sovereignty", "revelation_place": "Meccan", "ayah_count": 30}
+{"node_id": "surah:68", "surah_number": 68, "name_ar": "سُورَةُ القَلَمِ", "name_en": "Al-Qalam", "name_translation_en": "The Pen", "revelation_place": "Meccan", "ayah_count": 52}
+{"node_id": "surah:69", "surah_number": 69, "name_ar": "سُورَةُ الحَاقَّةِ", "name_en": "Al-Haaqqa", "name_translation_en": "The Reality", "revelation_place": "Meccan", "ayah_count": 52}
+{"node_id": "surah:70", "surah_number": 70, "name_ar": "سُورَةُ المَعَارِجِ", "name_en": "Al-Ma'aarij", "name_translation_en": "The Ascending Stairways", "revelation_place": "Meccan", "ayah_count": 44}
+{"node_id": "surah:71", "surah_number": 71, "name_ar": "سُورَةُ نُوحٍ", "name_en": "Nooh", "name_translation_en": "Noah", "revelation_place": "Meccan", "ayah_count": 28}
+{"node_id": "surah:72", "surah_number": 72, "name_ar": "سُورَةُ الجِنِّ", "name_en": "Al-Jinn", "name_translation_en": "The Jinn", "revelation_place": "Meccan", "ayah_count": 28}
+{"node_id": "surah:73", "surah_number": 73, "name_ar": "سُورَةُ المُزَّمِّلِ", "name_en": "Al-Muzzammil", "name_translation_en": "The Enshrouded One", "revelation_place": "Meccan", "ayah_count": 20}
+{"node_id": "surah:74", "surah_number": 74, "name_ar": "سُورَةُ المُدَّثِّرِ", "name_en": "Al-Muddaththir", "name_translation_en": "The Cloaked One", "revelation_place": "Meccan", "ayah_count": 56}
+{"node_id": "surah:75", "surah_number": 75, "name_ar": "سُورَةُ القِيَامَةِ", "name_en": "Al-Qiyaama", "name_translation_en": "The Resurrection", "revelation_place": "Meccan", "ayah_count": 40}
+{"node_id": "surah:76", "surah_number": 76, "name_ar": "سُورَةُ الإِنسَانِ", "name_en": "Al-Insaan", "name_translation_en": "Man", "revelation_place": "Medinan", "ayah_count": 31}
+{"node_id": "surah:77", "surah_number": 77, "name_ar": "سُورَةُ المُرۡسَلَاتِ", "name_en": "Al-Mursalaat", "name_translation_en": "The Emissaries", "revelation_place": "Meccan", "ayah_count": 50}
+{"node_id": "surah:78", "surah_number": 78, "name_ar": "سُورَةُ النَّبَإِ", "name_en": "An-Naba", "name_translation_en": "The Announcement", "revelation_place": "Meccan", "ayah_count": 40}
+{"node_id": "surah:79", "surah_number": 79, "name_ar": "سُورَةُ النَّازِعَاتِ", "name_en": "An-Naazi'aat", "name_translation_en": "Those who drag forth", "revelation_place": "Meccan", "ayah_count": 46}
+{"node_id": "surah:80", "surah_number": 80, "name_ar": "سُورَةُ عَبَسَ", "name_en": "Abasa", "name_translation_en": "He frowned", "revelation_place": "Meccan", "ayah_count": 42}
+{"node_id": "surah:81", "surah_number": 81, "name_ar": "سُورَةُ التَّكۡوِيرِ", "name_en": "At-Takwir", "name_translation_en": "The Overthrowing", "revelation_place": "Meccan", "ayah_count": 29}
+{"node_id": "surah:82", "surah_number": 82, "name_ar": "سُورَةُ الانفِطَارِ", "name_en": "Al-Infitaar", "name_translation_en": "The Cleaving", "revelation_place": "Meccan", "ayah_count": 19}
+{"node_id": "surah:83", "surah_number": 83, "name_ar": "سُورَةُ المُطَفِّفِينَ", "name_en": "Al-Mutaffifin", "name_translation_en": "Defrauding", "revelation_place": "Meccan", "ayah_count": 36}
+{"node_id": "surah:84", "surah_number": 84, "name_ar": "سُورَةُ الانشِقَاقِ", "name_en": "Al-Inshiqaaq", "name_translation_en": "The Splitting Open", "revelation_place": "Meccan", "ayah_count": 25}
+{"node_id": "surah:85", "surah_number": 85, "name_ar": "سُورَةُ البُرُوجِ", "name_en": "Al-Burooj", "name_translation_en": "The Constellations", "revelation_place": "Meccan", "ayah_count": 22}
+{"node_id": "surah:86", "surah_number": 86, "name_ar": "سُورَةُ الطَّارِقِ", "name_en": "At-Taariq", "name_translation_en": "The Morning Star", "revelation_place": "Meccan", "ayah_count": 17}
+{"node_id": "surah:87", "surah_number": 87, "name_ar": "سُورَةُ الأَعۡلَىٰ", "name_en": "Al-A'laa", "name_translation_en": "The Most High", "revelation_place": "Meccan", "ayah_count": 19}
+{"node_id": "surah:88", "surah_number": 88, "name_ar": "سُورَةُ الغَاشِيَةِ", "name_en": "Al-Ghaashiya", "name_translation_en": "The Overwhelming", "revelation_place": "Meccan", "ayah_count": 26}
+{"node_id": "surah:89", "surah_number": 89, "name_ar": "سُورَةُ الفَجۡرِ", "name_en": "Al-Fajr", "name_translation_en": "The Dawn", "revelation_place": "Meccan", "ayah_count": 30}
+{"node_id": "surah:90", "surah_number": 90, "name_ar": "سُورَةُ البَلَدِ", "name_en": "Al-Balad", "name_translation_en": "The City", "revelation_place": "Meccan", "ayah_count": 20}
+{"node_id": "surah:91", "surah_number": 91, "name_ar": "سُورَةُ الشَّمۡسِ", "name_en": "Ash-Shams", "name_translation_en": "The Sun", "revelation_place": "Meccan", "ayah_count": 15}
+{"node_id": "surah:92", "surah_number": 92, "name_ar": "سُورَةُ اللَّيۡلِ", "name_en": "Al-Lail", "name_translation_en": "The Night", "revelation_place": "Meccan", "ayah_count": 21}
+{"node_id": "surah:93", "surah_number": 93, "name_ar": "سُورَةُ الضُّحَىٰ", "name_en": "Ad-Dhuhaa", "name_translation_en": "The Morning Hours", "revelation_place": "Meccan", "ayah_count": 11}
+{"node_id": "surah:94", "surah_number": 94, "name_ar": "سُورَةُ الشَّرۡحِ", "name_en": "Ash-Sharh", "name_translation_en": "The Consolation", "revelation_place": "Meccan", "ayah_count": 8}
+{"node_id": "surah:95", "surah_number": 95, "name_ar": "سُورَةُ التِّينِ", "name_en": "At-Tin", "name_translation_en": "The Fig", "revelation_place": "Meccan", "ayah_count": 8}
+{"node_id": "surah:96", "surah_number": 96, "name_ar": "سُورَةُ العَلَقِ", "name_en": "Al-Alaq", "name_translation_en": "The Clot", "revelation_place": "Meccan", "ayah_count": 19}
+{"node_id": "surah:97", "surah_number": 97, "name_ar": "سُورَةُ القَدۡرِ", "name_en": "Al-Qadr", "name_translation_en": "The Power, Fate", "revelation_place": "Meccan", "ayah_count": 5}
+{"node_id": "surah:98", "surah_number": 98, "name_ar": "سُورَةُ البَيِّنَةِ", "name_en": "Al-Bayyina", "name_translation_en": "The Evidence", "revelation_place": "Medinan", "ayah_count": 8}
+{"node_id": "surah:99", "surah_number": 99, "name_ar": "سُورَةُ الزَّلۡزَلَةِ", "name_en": "Az-Zalzala", "name_translation_en": "The Earthquake", "revelation_place": "Medinan", "ayah_count": 8}
+{"node_id": "surah:100", "surah_number": 100, "name_ar": "سُورَةُ العَادِيَاتِ", "name_en": "Al-Aadiyaat", "name_translation_en": "The Chargers", "revelation_place": "Meccan", "ayah_count": 11}
+{"node_id": "surah:101", "surah_number": 101, "name_ar": "سُورَةُ القَارِعَةِ", "name_en": "Al-Qaari'a", "name_translation_en": "The Calamity", "revelation_place": "Meccan", "ayah_count": 11}
+{"node_id": "surah:102", "surah_number": 102, "name_ar": "سُورَةُ التَّكَاثُرِ", "name_en": "At-Takaathur", "name_translation_en": "Competition", "revelation_place": "Meccan", "ayah_count": 8}
+{"node_id": "surah:103", "surah_number": 103, "name_ar": "سُورَةُ العَصۡرِ", "name_en": "Al-Asr", "name_translation_en": "The Declining Day, Epoch", "revelation_place": "Meccan", "ayah_count": 3}
+{"node_id": "surah:104", "surah_number": 104, "name_ar": "سُورَةُ الهُمَزَةِ", "name_en": "Al-Humaza", "name_translation_en": "The Traducer", "revelation_place": "Meccan", "ayah_count": 9}
+{"node_id": "surah:105", "surah_number": 105, "name_ar": "سُورَةُ الفِيلِ", "name_en": "Al-Fil", "name_translation_en": "The Elephant", "revelation_place": "Meccan", "ayah_count": 5}
+{"node_id": "surah:106", "surah_number": 106, "name_ar": "سُورَةُ قُرَيۡشٍ", "name_en": "Quraish", "name_translation_en": "Quraysh", "revelation_place": "Meccan", "ayah_count": 4}
+{"node_id": "surah:107", "surah_number": 107, "name_ar": "سُورَةُ المَاعُونِ", "name_en": "Al-Maa'un", "name_translation_en": "Almsgiving", "revelation_place": "Meccan", "ayah_count": 7}
+{"node_id": "surah:108", "surah_number": 108, "name_ar": "سُورَةُ الكَوۡثَرِ", "name_en": "Al-Kawthar", "name_translation_en": "Abundance", "revelation_place": "Meccan", "ayah_count": 3}
+{"node_id": "surah:109", "surah_number": 109, "name_ar": "سُورَةُ الكَافِرُونَ", "name_en": "Al-Kaafiroon", "name_translation_en": "The Disbelievers", "revelation_place": "Meccan", "ayah_count": 6}
+{"node_id": "surah:110", "surah_number": 110, "name_ar": "سُورَةُ النَّصۡرِ", "name_en": "An-Nasr", "name_translation_en": "Divine Support", "revelation_place": "Medinan", "ayah_count": 3}
+{"node_id": "surah:111", "surah_number": 111, "name_ar": "سُورَةُ المَسَدِ", "name_en": "Al-Masad", "name_translation_en": "The Palm Fibre", "revelation_place": "Meccan", "ayah_count": 5}
+{"node_id": "surah:112", "surah_number": 112, "name_ar": "سُورَةُ الإِخۡلَاصِ", "name_en": "Al-Ikhlaas", "name_translation_en": "Sincerity", "revelation_place": "Meccan", "ayah_count": 4}
+{"node_id": "surah:113", "surah_number": 113, "name_ar": "سُورَةُ الفَلَقِ", "name_en": "Al-Falaq", "name_translation_en": "The Dawn", "revelation_place": "Meccan", "ayah_count": 5}
+{"node_id": "surah:114", "surah_number": 114, "name_ar": "سُورَةُ النَّاسِ", "name_en": "An-Naas", "name_translation_en": "Mankind", "revelation_place": "Meccan", "ayah_count": 6}
